@@ -134,7 +134,7 @@ def _kmedoids_run(X, n_clusters, dist_func, max_iter=1000, verbose=True):
 
 
 class KMedoids(object):
-    def __init__(self, dataset, n_clusters, dist_func=_get_distance, max_iter=30):
+    def __init__(self, dataset, n_clusters, dist_func=_get_distance, max_iter=300):
         self.dataset = dataset
         self.n_clusters = n_clusters
         self.dist_func = dist_func
