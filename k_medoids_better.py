@@ -53,16 +53,16 @@ def get_distance_matrix(samples):
 
 dataset = pd.read_csv('D1.csv')
 sequences = dataset.Sequences.tolist()
-
-initial_medoids = _get_init_centers(500, sequences)
-if not os.path.exists('distance_matrix.npy'):
+k = 500
+initial_medoids = _get_init_centers(k, sequences)
+if not os.path.exists('distance_matrix_D1.npy'):
     print('Building the matrix distance...')
     distance_matrix = get_distance_matrix(sequences)
     np.save('distance_matrix', distance_matrix)
 else:
     print('Existing distance matrix --- loading...')
 
-def_distance_matrix = np.load('distance_matrix.npy')
+def_distance_matrix = np.load('distance_matrix_D1.npy')
 matrix = def_distance_matrix.tolist()
 
 start = time.time()
@@ -77,5 +77,6 @@ print('Time of K-medoid (PAM) execution: {} minutes'.format(delay))
 print(centers)
 print(clusters)
 
-np.save('medoids', centers)  # saves final medoids ids --- we can easily retrieve the sequences later using those ids
-np.save('clusters', clusters)  # saves final clusters members ids
+np.save('medoids_k_{}'.format(k),
+        centers)  # saves final medoids ids --- we can easily retrieve the sequences later using those ids
+np.save('clusters_k_{}'.format(k), clusters)  # saves final clusters members ids
