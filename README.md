@@ -5,6 +5,6 @@ Precomputed distance metric on our current set D1 (used for the real oracle) acc
 
 To run: python k_medoids_better.py --n_medoids 500
 
-# This will load the default distance matrix built on the full D1 set (real oracle) - the list of medoids (initially 500), and the full list of associated neighbors (clusters members)
+This will load the default distance matrix built on the full D1 set (real oracle) - the list of medoids (initially 500), and the full list of associated neighbors (clusters members)
 
-# If n_medoids != 500, the distance matrix will be used and new set of k-medoids will be created
+If n_medoids != 500, the distance matrix will be used and new set of k-medoids will be created
