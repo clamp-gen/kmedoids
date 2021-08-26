@@ -1,6 +1,6 @@
 # kmedoids
 
-Precomputed distance metric on our current set D1 (used for the real oracle) accessible [here](https://drive.google.com/file/d/12zqAvnPKjUBvbP0O405CkL0-zY-iLudq/view?usp=sharing)
+Precomputed distance metric on our current set D1 (used for the real oracle) accessible [here](https://drive.google.com/file/d/17I8He-Dn3vXu3q3b7Ge_h5bw9GJ5yTgC/view?usp=sharing)
 
 
 To run: python k_medoids_better.py --n_medoids 500
