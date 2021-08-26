@@ -10,4 +10,4 @@ To run: python k_medoids_better.py --n_medoids 500
   - The 500 k medoids (protoypes) are available [here](https://github.com/clamp-gen/kmedoids/blob/main/medoids_k_500.npy)
   - The set of members of the cluster of each medoid is available [here](https://github.com/clamp-gen/kmedoids/blob/main/clusters_k_500.npy)
 
-The HaackMD note summarizing the approach is [here](https://hackmd.io/hoWSQvl5Tl6CsxoPuANKyw)
+The HackMD note summarizing the approach is [here](https://hackmd.io/hoWSQvl5Tl6CsxoPuANKyw)
