@@ -59,13 +59,14 @@ def get_distance_matrix(samples):
 
 def main(args):
     dataset = pd.read_csv('D1.csv')
-    sequences = dataset.Sequences.tolist()
+    amps = dataset[dataset['Label'] == 1]['Sequences']
+    sequences = amps.tolist()
     k = args.n_medoids
     initial_medoids = _get_init_centers(k, sequences)
     if not os.path.exists('distance_matrix_D1.npy'):
         print('Building the matrix distance...')
         distance_matrix = get_distance_matrix(sequences)
-        np.save('distance_matrix', distance_matrix)
+        np.save('distance_matrix_D1', distance_matrix)
     else:
         print('Loading existing distance matrix...')
 
@@ -94,7 +95,7 @@ def main(args):
         # filtering out medoids who appears to be members of their own clusters
         clusters_sequences = {med: dataset["Sequences"][list(set(members).difference(set(centers)))].tolist() for
                               med, members in zip(sequences_medoids,
-                                                  clusters.tolist())}
+                                                  clusters)}
         print(clusters_sequences)
 
     else:
