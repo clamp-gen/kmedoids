@@ -1,3 +1,8 @@
+# How to create AMP prototypes based on e_value obtained from Diamond
+- Step 1: Run python diamond_distance_matrix.py to get the pair-wise distance between all AMP pairs in dataset D1.csv
+(There is precomputed diamond_distance_matrix in file diamond_distance_matrix.zip for step 1, so you can skip step1)
+- Step 2: Run python diamond_get_amp_prototype.py to write prototypes in file amp_prototype_diamond_distance.txt
+
 # kmedoids
 
 Precomputed distance metric on our current set D1 (used for the real oracle) accessible [here](https://drive.google.com/file/d/17I8He-Dn3vXu3q3b7Ge_h5bw9GJ5yTgC/view?usp=sharing)
