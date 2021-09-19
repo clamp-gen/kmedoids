@@ -9,14 +9,16 @@ def mode_entropy(d_hard, batch, metric=edit_distance):
     :param batch: batch of sequences (list)
     :return: return the entropy (diversity of coverage) of each hard sequence
     """
+    epsilon = 1e-5
     counts = np.zeros(len(d_hard))
+    counts.fill(epsilon) # filling with small values to avoid NaN
     for s in batch:
         distances = [metric(s_i, s) for s_i in d_hard]
         closest = np.argmin(distances)
         counts[closest] += 1
     n = len(batch)
     p_hat = counts / n
-    entropy = (p_hat * np.log(p_hat)).sum()
+    entropy = -1 * (p_hat * np.log(p_hat)).sum()
     return entropy
 
 
